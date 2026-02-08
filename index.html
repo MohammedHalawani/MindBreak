@@ -1,27 +1,384 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>MindBreak</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MindBreak — Support & Privacy</title>
+  <meta name="description" content="MindBreak support page: contact info and privacy details." />
+
+  <style>
+    :root{
+      --bg: #070A12;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.08);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --line: rgba(255,255,255,.12);
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --accent: #A3B8FF;
+      --accent2: #7CF7D4;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(1000px 600px at 20% 10%, rgba(163,184,255,.22), transparent 55%),
+        radial-gradient(900px 700px at 80% 20%, rgba(124,247,212,.18), transparent 60%),
+        radial-gradient(900px 700px at 50% 100%, rgba(255,255,255,.06), transparent 55%),
+        var(--bg);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    a:hover{ text-decoration: underline; text-underline-offset: 4px; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 64px;
+    }
+
+    /* top bar */
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      padding: 10px 2px 22px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 0;
+    }
+    .logo{
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background:
+        radial-gradient(14px 14px at 30% 30%, rgba(255,255,255,.35), transparent 55%),
+        linear-gradient(135deg, rgba(163,184,255,.9), rgba(124,247,212,.85));
+      box-shadow: 0 12px 28px rgba(0,0,0,.35);
+      position: relative;
+      overflow:hidden;
+    }
+    /* subtle "break" line */
+    .logo::after{
+      content:"";
+      position:absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 44%, rgba(0,0,0,.25) 48%, transparent 52%);
+      opacity: .55;
+    }
+    .brand h1{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: .2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .pill{
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.03);
+      backdrop-filter: blur(10px);
+    }
+
+    /* hero */
+    .hero{
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position: relative;
+    }
+    .hero-inner{
+      padding: 34px 22px 26px;
+    }
+    .hero h2{
+      margin: 0 0 10px;
+      font-size: clamp(28px, 3.8vw, 40px);
+      letter-spacing: -0.6px;
+    }
+    .hero p{
+      margin: 0 0 18px;
+      color: var(--muted);
+      max-width: 62ch;
+      font-size: 16px;
+    }
+    .actions{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+      backdrop-filter: blur(10px);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.18);
+      text-decoration:none;
+    }
+    .btn.primary{
+      border-color: transparent;
+      background: linear-gradient(135deg, rgba(163,184,255,.95), rgba(124,247,212,.9));
+      color: #081018;
+    }
+    .btn.primary:hover{
+      background: linear-gradient(135deg, rgba(163,184,255,1), rgba(124,247,212,1));
+    }
+    .icon{
+      width: 18px; height: 18px;
+      display:inline-block;
+    }
+
+    /* layout grid */
+    .grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 860px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 10px 26px rgba(0,0,0,.28);
+      overflow:hidden;
+    }
+    .card .hd{
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .card .hd h3{
+      margin:0;
+      font-size: 15px;
+      letter-spacing: .2px;
+    }
+    .card .bd{
+      padding: 16px 18px 18px;
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+
+    .list{
+      margin: 10px 0 0;
+      padding: 0;
+      list-style: none;
+      display:grid;
+      gap: 10px;
+    }
+    .li{
+      display:flex;
+      gap: 12px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,.03);
+    }
+    .li strong{
+      color: var(--text);
+      font-weight: 700;
+    }
+    .badge{
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: rgba(163,184,255,.14);
+      border: 1px solid rgba(163,184,255,.22);
+      display:grid;
+      place-items:center;
+    }
+
+    .muted{ color: var(--muted); }
+    .small{ font-size: 12.5px; }
+
+    .footer{
+      margin-top: 18px;
+      padding: 18px 4px 0;
+      color: rgba(255,255,255,.52);
+      display:flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      font-size: 12px;
+      color: rgba(255,255,255,.78);
+      background: rgba(0,0,0,.24);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>MindBreak</h1>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>MindBreak</h1>
+          <div class="small muted">Support • Privacy • Contact</div>
+        </div>
+      </div>
+      <div class="pill">Built for mindful breaks</div>
+    </div>
 
-  <p>
-    MindBreak helps users become more mindful of their screen time by
-    sending gentle reminders and interactive riddles when usage exceeds
-    self-defined limits.
-  </p>
+    <section class="hero" aria-label="MindBreak overview">
+      <div class="hero-inner">
+        <h2>Pause the scroll. Reset your mind.</h2>
+        <p>
+          MindBreak helps you become more mindful of your screen time with gentle reminders and
+          interactive riddles when usage exceeds your self-defined limits — all designed to help you
+          take a break without guilt.
+        </p>
 
-  <h2>Privacy</h2>
-  <p>
-    MindBreak does not collect, store, or share personal data.
-    All processing happens locally on the device.
-  </p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:xmb.bmx30@gmail.com?subject=MindBreak%20Support">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7.5A3.5 3.5 0 0 1 7.5 4h9A3.5 3.5 0 0 1 20 7.5v9A3.5 3.5 0 0 1 16.5 20h-9A3.5 3.5 0 0 1 4 16.5v-9Z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="m6.5 8 5.5 4.2L17.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Contact Support
+          </a>
 
-  <h2>Contact</h2>
-  <p>
-    Email: xmb.bmx30@gmail.com
-  </p>
+          <a class="btn" href="#privacy">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2.5 19.5 6v6.3c0 5-3.2 8.7-7.5 9.7-4.3-1-7.5-4.7-7.5-9.7V6L12 2.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M9.3 12.2 11 14l3.7-4.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Privacy
+          </a>
+
+          <a class="btn" href="#faq">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M9.6 9.2a2.6 2.6 0 1 1 4.4 1.9c-.8.7-1.6 1.2-1.6 2.3v.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M12 17h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+            </svg>
+            FAQ
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card" id="privacy" aria-label="Privacy policy">
+        <div class="hd">
+          <h3>Privacy</h3>
+        </div>
+        <div class="bd">
+          <p style="margin-top:0">
+            MindBreak does <strong>not</strong> collect, store, or share personal data.
+            All processing happens <strong>locally on your device</strong>.
+          </p>
+
+          <ul class="list" aria-label="Privacy highlights">
+            <li class="li">
+              <div class="badge" aria-hidden="true">🔒</div>
+              <div><strong>No data collection</strong><div class="small">We don’t collect analytics, identifiers, or personal info.</div></div>
+            </li>
+            <li class="li">
+              <div class="badge" aria-hidden="true">📱</div>
+              <div><strong>On-device only</strong><div class="small">Your usage limits and sessions stay on your phone.</div></div>
+            </li>
+            <li class="li">
+              <div class="badge" aria-hidden="true">🤝</div>
+              <div><strong>No sharing</strong><div class="small">No selling or sharing of user data with third parties.</div></div>
+            </li>
+          </ul>
+
+          <p class="small" style="margin-bottom:0">
+            Questions? Email us at
+            <a href="mailto:xmb.bmx30@gmail.com?subject=MindBreak%20Privacy%20Question"><span class="kbd">xmb.bmx30@gmail.com</span></a>.
+          </p>
+        </div>
+      </section>
+
+      <section class="card" id="faq" aria-label="Frequently asked questions">
+        <div class="hd">
+          <h3>FAQ</h3>
+        </div>
+        <div class="bd">
+          <ul class="list">
+            <li class="li">
+              <div class="badge" aria-hidden="true">⏱️</div>
+              <div>
+                <strong>How does it work?</strong>
+                <div class="small">Start a session timer. When time is up, you’ll get a gentle nudge and a riddle.</div>
+              </div>
+            </li>
+            <li class="li">
+              <div class="badge" aria-hidden="true">🧩</div>
+              <div>
+                <strong>Why riddles?</strong>
+                <div class="small">They break autopilot scrolling and help your brain “reset” before you continue.</div>
+              </div>
+            </li>
+            <li class="li">
+              <div class="badge" aria-hidden="true">🔔</div>
+              <div>
+                <strong>Do I need notifications?</strong>
+                <div class="small">Recommended, so you can get nudges even when the app is closed.</div>
+              </div>
+            </li>
+          </ul>
+
+          <p class="small" style="margin: 12px 0 0">
+            Need help? Tap <strong>Contact Support</strong> or email
+            <a href="mailto:xmb.bmx30@gmail.com?subject=MindBreak%20Support"><span class="kbd">xmb.bmx30@gmail.com</span></a>.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <div class="footer">
+      <div>© <span id="year"></span> MindBreak</div>
+      <div class="small">Support: <a href="mailto:xmb.bmx30@gmail.com?subject=MindBreak%20Support"><span class="kbd">xmb.bmx30@gmail.com</span></a></div>
+    </div>
+  </div>
+
+  <script>
+    // Set current year (no external libraries)
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
