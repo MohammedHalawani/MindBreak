@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MindBreak — Support & Privacy</title>
-  <meta name="description" content="MindBreak support page: contact info and privacy details." />
+  <title>MindBreak — Support, Privacy & Licenses</title>
+  <meta name="description" content="MindBreak support page: contact info, privacy details, and licenses." />
   <link rel="icon" href="https://raw.githubusercontent.com/MohammedHalawani/MindBreak/main/MindBreak.png" type="image/png">
-
 
   <style>
     :root{
@@ -73,7 +72,6 @@
       position: relative;
       overflow:hidden;
     }
-    /* subtle "break" line */
     .logo::after{
       content:"";
       position:absolute;
@@ -197,7 +195,7 @@
 
     .list{
       margin: 10px 0 0;
-      padding: 0;
+      padding:  0;
       list-style: none;
       display:grid;
       gap: 10px;
@@ -258,7 +256,7 @@
         <img src="https://github.com/MohammedHalawani/MindBreak/blob/main/MindBreak.png?raw=true" alt="MindBreak icon" class="logo" />
         <div>
           <h1>MindBreak</h1>
-          <div class="small muted">Support • Privacy • Contact</div>
+          <div class="small muted">Support • Privacy • Licenses</div>
         </div>
       </div>
       <div class="pill">Built for mindful breaks</div>
@@ -268,118 +266,94 @@
       <div class="hero-inner">
         <h2>Pause the scroll. Reset your mind.</h2>
         <p>
-          MindBreak helps you become more mindful of your screen time with gentle reminders and
-          interactive riddles when usage exceeds your self-defined limits — all designed to help you
-          take a break without guilt.
+          MindBreak helps you become more mindful of your screen time using gentle nudges and
+          short brain teasers when you hit your limits — designed to break autopilot scrolling,
+          not punish you for it.
         </p>
 
         <div class="actions">
           <a class="btn primary" href="mailto:xmb.bmx30@gmail.com?subject=MindBreak%20Support">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 7.5A3.5 3.5 0 0 1 7.5 4h9A3.5 3.5 0 0 1 20 7.5v9A3.5 3.5 0 0 1 16.5 20h-9A3.5 3.5 0 0 1 4 16.5v-9Z" stroke="currentColor" stroke-width="1.8"/>
-              <path d="m6.5 8 5.5 4.2L17.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
             Contact Support
           </a>
-
-          <a class="btn" href="#privacy">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 2.5 19.5 6v6.3c0 5-3.2 8.7-7.5 9.7-4.3-1-7.5-4.7-7.5-9.7V6L12 2.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M9.3 12.2 11 14l3.7-4.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Privacy
-          </a>
-
-          <a class="btn" href="#faq">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M9.6 9.2a2.6 2.6 0 1 1 4.4 1.9c-.8.7-1.6 1.2-1.6 2.3v.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M12 17h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
-            </svg>
-            FAQ
-          </a>
+          <a class="btn" href="#privacy">Privacy</a>
+          <a class="btn" href="#faq">FAQ</a>
+          <a class="btn" href="#licenses">Licenses</a>
         </div>
       </div>
     </section>
 
     <div class="grid">
-      <section class="card" id="privacy" aria-label="Privacy policy">
-        <div class="hd">
-          <h3>Privacy</h3>
-        </div>
+      <section class="card" id="privacy">
+        <div class="hd"><h3>Privacy</h3></div>
         <div class="bd">
           <p style="margin-top:0">
             MindBreak does <strong>not</strong> collect, store, or share personal data.
             All processing happens <strong>locally on your device</strong>.
           </p>
 
-          <ul class="list" aria-label="Privacy highlights">
-            <li class="li">
-              <div class="badge" aria-hidden="true">🔒</div>
-              <div><strong>No data collection</strong><div class="small">We don’t collect analytics, identifiers, or personal info.</div></div>
-            </li>
-            <li class="li">
-              <div class="badge" aria-hidden="true">📱</div>
-              <div><strong>On-device only</strong><div class="small">Your usage limits and sessions stay on your phone.</div></div>
-            </li>
-            <li class="li">
-              <div class="badge" aria-hidden="true">🤝</div>
-              <div><strong>No sharing</strong><div class="small">No selling or sharing of user data with third parties.</div></div>
-            </li>
+          <ul class="list">
+            <li class="li"><div class="badge">🔒</div><div><strong>No data collection</strong><div class="small">No analytics, identifiers, or tracking.</div></div></li>
+            <li class="li"><div class="badge">📱</div><div><strong>On-device only</strong><div class="small">Your limits and sessions stay on your phone.</div></div></li>
+            <li class="li"><div class="badge">🤝</div><div><strong>No sharing</strong><div class="small">No selling or sharing with third parties.</div></div></li>
           </ul>
-
-          <p class="small" style="margin-bottom:0">
-            Questions? Email us at
-            <a href="mailto:xmb.bmx30@gmail.com?subject=MindBreak%20Privacy%20Question"><span class="kbd">xmb.bmx30@gmail.com</span></a>.
-          </p>
         </div>
       </section>
 
-      <section class="card" id="faq" aria-label="Frequently asked questions">
-        <div class="hd">
-          <h3>FAQ</h3>
-        </div>
+      <section class="card" id="faq">
+        <div class="hd"><h3>FAQ</h3></div>
         <div class="bd">
           <ul class="list">
-            <li class="li">
-              <div class="badge" aria-hidden="true">⏱️</div>
-              <div>
-                <strong>How does it work?</strong>
-                <div class="small">Start a session timer. When time is up, you’ll get a gentle nudge and a riddle.</div>
-              </div>
-            </li>
-            <li class="li">
-              <div class="badge" aria-hidden="true">🧩</div>
-              <div>
-                <strong>Why riddles?</strong>
-                <div class="small">They break autopilot scrolling and help your brain “reset” before you continue.</div>
-              </div>
-            </li>
-            <li class="li">
-              <div class="badge" aria-hidden="true">🔔</div>
-              <div>
-                <strong>Do I need notifications?</strong>
-                <div class="small">Recommended, so you can get nudges even when the app is closed.</div>
-              </div>
-            </li>
+            <li class="li"><div class="badge">⏱️</div><div><strong>How does it work?</strong><div class="small">Set limits. When you hit them, MindBreak shows a short brain teaser.</div></div></li>
+            <li class="li"><div class="badge">🧠</div><div><strong>Why brain teasers?</strong><div class="small">They help interrupt mindless scrolling and reset your focus.</div></div></li>
+            <li class="li"><div class="badge">🔔</div><div><strong>Do I need notifications?</strong><div class="small">Recommended, so you can get nudges even when the app is closed.</div></div></li>
           </ul>
-
-          <p class="small" style="margin: 12px 0 0">
-            Need help? Tap <strong>Contact Support</strong> or email
-            <a href="mailto:xmb.bmx30@gmail.com?subject=MindBreak%20Support"><span class="kbd">xmb.bmx30@gmail.com</span></a>.
-          </p>
         </div>
       </section>
     </div>
 
+    <section class="card" id="licenses" style="margin-top:16px;">
+      <div class="hd"><h3>Licenses</h3></div>
+      <div class="bd">
+        <p style="margin-top:0">
+          MindBreak uses trivia content from the <strong>OpenTriviaQA</strong> dataset.
+        </p>
+        <p class="small">
+          <strong>Questions & answers by uberspot</strong> — licensed under
+          <strong>CC BY-SA 4.0</strong>
+        </p>
+        <ul class="list">
+          <li class="li">
+            <div class="badge">📚</div>
+            <div>
+              <strong>OpenTriviaQA</strong>
+              <div class="small">
+                Source: <a href="https://github.com/uberspot/OpenTriviaQA" target="_blank" rel="noopener noreferrer">github.com/uberspot/OpenTriviaQA</a>
+              </div>
+            </div>
+          </li>
+          <li class="li">
+            <div class="badge">⚖️</div>
+            <div>
+              <strong>Creative Commons BY-SA 4.0</strong>
+              <div class="small">
+                License: <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">creativecommons.org/licenses/by-sa/4.0</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <p class="small" style="margin-bottom:0">
+          Any adapted content is shared under the same license, in accordance with CC BY-SA 4.0.
+        </p>
+      </div>
+    </section>
+
     <div class="footer">
       <div>© <span id="year"></span> MindBreak</div>
-      <div class="small">Support: <a href="mailto:xmb.bmx30@gmail.com?subject=MindBreak%20Support"><span class="kbd">xmb.bmx30@gmail.com</span></a></div>
+      <div class="small">Support: <span class="kbd">xmb.bmx30@gmail.com</span></div>
     </div>
   </div>
 
   <script>
-    // Set current year (no external libraries)
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
