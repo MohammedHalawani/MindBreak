@@ -1,325 +1,432 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MindBreak — Support, Privacy & Licenses</title>
   <meta name="description" content="MindBreak support page: contact info, privacy details, and licenses." />
   <link rel="icon" href="https://raw.githubusercontent.com/MohammedHalawani/MindBreak/main/MindBreak.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root{
+    :root {
       --bg: #070A12;
-      --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.08);
       --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --line: rgba(255,255,255,.12);
+      --muted: rgba(255,255,255,.65);
+      --line: rgba(255,255,255,.10);
       --shadow: 0 20px 60px rgba(0,0,0,.45);
       --radius: 18px;
       --accent: #A3B8FF;
       --accent2: #7CF7D4;
       --max: 980px;
+      --font-en: 'DM Sans', sans-serif;
+      --font-ar: 'Cairo', sans-serif;
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+
+    body {
+      font-family: var(--font-en);
       color: var(--text);
       background:
-        radial-gradient(1000px 600px at 20% 10%, rgba(163,184,255,.22), transparent 55%),
-        radial-gradient(900px 700px at 80% 20%, rgba(124,247,212,.18), transparent 60%),
-        radial-gradient(900px 700px at 50% 100%, rgba(255,255,255,.06), transparent 55%),
+        radial-gradient(1000px 600px at 20% 10%, rgba(163,184,255,.20), transparent 55%),
+        radial-gradient(900px 700px at 80% 20%, rgba(124,247,212,.16), transparent 60%),
+        radial-gradient(900px 700px at 50% 100%, rgba(255,255,255,.05), transparent 55%),
         var(--bg);
-      line-height: 1.55;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
-    a{ color: inherit; text-decoration: none; }
-    a:hover{ text-decoration: underline; text-underline-offset: 4px; }
+    body.ar { font-family: var(--font-ar); direction: rtl; }
 
-    .wrap{
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    .wrap {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 28px 18px 64px;
+      padding: 28px 20px 72px;
     }
 
-    /* top bar */
-    .top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+    /* Language Toggle */
+    .lang-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 18px;
+    }
+    body.ar .lang-bar { justify-content: flex-start; }
+
+    .lang-switch {
+      display: flex;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-btn {
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      transition: all .2s ease;
+      font-family: inherit;
+    }
+    .lang-btn.active {
+      background: linear-gradient(135deg, rgba(163,184,255,.9), rgba(124,247,212,.85));
+      color: #081018;
+    }
+
+    /* Top Bar */
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 12px;
-      padding: 10px 2px 22px;
+      padding: 10px 2px 24px;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width: 0;
-    }
-    .logo{
-      width: 44px;
-      height: 44px;
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .logo {
+      width: 48px; height: 48px;
       border-radius: 14px;
-      background:
-        radial-gradient(14px 14px at 30% 30%, rgba(255,255,255,.35), transparent 55%),
-        linear-gradient(135deg, rgba(163,184,255,.9), rgba(124,247,212,.85));
-      box-shadow: 0 12px 28px rgba(0,0,0,.35);
-      position: relative;
-      overflow:hidden;
-    }
-    .logo::after{
-      content:"";
-      position:absolute;
-      inset: 0;
-      background: linear-gradient(90deg, transparent 44%, rgba(0,0,0,.25) 48%, transparent 52%);
-      opacity: .55;
-    }
-    .brand h1{
-      margin:0;
-      font-size: 18px;
-      letter-spacing: .2px;
-      white-space: nowrap;
       overflow: hidden;
-      text-overflow: ellipsis;
+      flex-shrink: 0;
+      box-shadow: 0 8px 24px rgba(0,0,0,.4);
     }
-    .pill{
+    .logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .brand h1 { font-size: 19px; font-weight: 700; letter-spacing: -.2px; }
+    body.ar .brand h1 { letter-spacing: 0; }
+    .brand .sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .pill {
       font-size: 12px;
       color: var(--muted);
       border: 1px solid var(--line);
-      padding: 8px 12px;
+      padding: 8px 14px;
       border-radius: 999px;
       background: rgba(255,255,255,.03);
-      backdrop-filter: blur(10px);
+      white-space: nowrap;
     }
 
-    /* hero */
-    .hero{
+    /* Hero */
+    .hero {
       border: 1px solid var(--line);
       border-radius: calc(var(--radius) + 6px);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      background: linear-gradient(160deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
       box-shadow: var(--shadow);
-      overflow:hidden;
+      overflow: hidden;
       position: relative;
     }
-    .hero-inner{
-      padding: 34px 22px 26px;
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: -60px;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(163,184,255,.15), transparent 65%);
+      pointer-events: none;
     }
-    .hero h2{
-      margin: 0 0 10px;
-      font-size: clamp(28px, 3.8vw, 40px);
-      letter-spacing: -0.6px;
+    body.ar .hero::before { left: auto; right: -60px; }
+    .hero-inner { padding: 36px 26px 28px; position: relative; }
+    .hero h2 {
+      font-size: clamp(26px, 3.8vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      margin-bottom: 12px;
+      line-height: 1.25;
     }
-    .hero p{
-      margin: 0 0 18px;
+    body.ar .hero h2 { letter-spacing: 0; }
+    .hero p {
       color: var(--muted);
-      max-width: 62ch;
-      font-size: 16px;
+      max-width: 60ch;
+      font-size: 15.5px;
+      margin-bottom: 22px;
     }
-    .actions{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 12px 14px;
-      border-radius: 14px;
+    body.ar .hero p { font-size: 16px; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 16px;
+      border-radius: 13px;
       border: 1px solid var(--line);
       background: rgba(255,255,255,.04);
       color: var(--text);
       font-weight: 600;
       font-size: 14px;
-      backdrop-filter: blur(10px);
+      cursor: pointer;
       transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-family: inherit;
     }
-    .btn:hover{
+    .btn:hover {
       transform: translateY(-1px);
-      background: rgba(255,255,255,.06);
+      background: rgba(255,255,255,.07);
       border-color: rgba(255,255,255,.18);
-      text-decoration:none;
+      text-decoration: none;
     }
-    .btn.primary{
+    .btn.primary {
       border-color: transparent;
       background: linear-gradient(135deg, rgba(163,184,255,.95), rgba(124,247,212,.9));
       color: #081018;
     }
-    .btn.primary:hover{
-      background: linear-gradient(135deg, rgba(163,184,255,1), rgba(124,247,212,1));
-    }
-    .icon{
-      width: 18px; height: 18px;
-      display:inline-block;
-    }
+    .btn.primary:hover { background: linear-gradient(135deg, #A3B8FF, #7CF7D4); }
 
-    /* layout grid */
-    .grid{
-      display:grid;
+    /* Grid */
+    .grid {
+      display: grid;
       grid-template-columns: 1.15fr .85fr;
-      gap: 16px;
-      margin-top: 16px;
+      gap: 14px;
+      margin-top: 14px;
     }
-    @media (max-width: 860px){
-      .grid{ grid-template-columns: 1fr; }
-    }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
 
-    .card{
+    /* Cards */
+    .card {
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: rgba(255,255,255,.04);
-      box-shadow: 0 10px 26px rgba(0,0,0,.28);
-      overflow:hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      overflow: hidden;
     }
-    .card .hd{
-      padding: 16px 18px;
+    .card .hd {
+      padding: 15px 18px;
       border-bottom: 1px solid var(--line);
       background: rgba(255,255,255,.03);
     }
-    .card .hd h3{
-      margin:0;
-      font-size: 15px;
-      letter-spacing: .2px;
+    .card .hd h3 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      color: var(--muted);
     }
-    .card .bd{
-      padding: 16px 18px 18px;
+    body.ar .card .hd h3 { letter-spacing: 0; text-transform: none; font-size: 14px; }
+    .card .bd {
+      padding: 18px 18px 20px;
       color: var(--muted);
       font-size: 14.5px;
     }
+    body.ar .card .bd { font-size: 15px; }
 
-    .list{
-      margin: 10px 0 0;
-      padding:  0;
-      list-style: none;
-      display:grid;
-      gap: 10px;
-    }
-    .li{
-      display:flex;
+    /* List items */
+    .list { list-style: none; display: grid; gap: 10px; margin-top: 12px; }
+    .li {
+      display: flex;
       gap: 12px;
-      padding: 12px;
+      padding: 13px;
       border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(255,255,255,.03);
+      border-radius: 13px;
+      background: rgba(255,255,255,.025);
+      align-items: flex-start;
     }
-    .li strong{
-      color: var(--text);
-      font-weight: 700;
-    }
-    .badge{
+    body.ar .li { flex-direction: row-reverse; text-align: right; }
+    .li strong { color: var(--text); font-weight: 700; display: block; margin-bottom: 2px; }
+    .li .small { font-size: 12.5px; color: var(--muted); }
+    body.ar .li .small { font-size: 13px; }
+    .badge {
       flex: 0 0 auto;
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      background: rgba(163,184,255,.14);
-      border: 1px solid rgba(163,184,255,.22);
-      display:grid;
-      place-items:center;
+      width: 34px; height: 34px;
+      border-radius: 11px;
+      background: rgba(163,184,255,.12);
+      border: 1px solid rgba(163,184,255,.20);
+      display: grid;
+      place-items: center;
+      font-size: 16px;
     }
 
-    .muted{ color: var(--muted); }
-    .small{ font-size: 12.5px; }
+    .card-intro { margin-top: 0; margin-bottom: 4px; line-height: 1.65; }
+    .card-intro strong { color: var(--text); }
 
-    .footer{
+    /* Footer */
+    .footer {
       margin-top: 18px;
       padding: 18px 4px 0;
-      color: rgba(255,255,255,.52);
-      display:flex;
+      color: rgba(255,255,255,.45);
+      display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 10px;
-      border-top: 1px solid rgba(255,255,255,.08);
+      border-top: 1px solid rgba(255,255,255,.07);
+      font-size: 13px;
     }
-
-    .kbd{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+    .kbd {
+      font-family: ui-monospace, Menlo, monospace;
       font-size: 12px;
-      color: rgba(255,255,255,.78);
+      color: rgba(255,255,255,.75);
       background: rgba(0,0,0,.24);
       border: 1px solid rgba(255,255,255,.12);
       padding: 2px 8px;
-      border-radius: 10px;
+      border-radius: 8px;
     }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero { animation: fadeUp .45s ease both; }
+    .grid > .card:nth-child(1) { animation: fadeUp .45s ease .08s both; }
+    .grid > .card:nth-child(2) { animation: fadeUp .45s ease .14s both; }
+    .grid + .card { animation: fadeUp .45s ease .18s both; }
+
+    /* i18n */
+    [data-lang] { display: none; }
+    html[lang="en"] [data-lang="en"] { display: revert; }
+    html[lang="ar"] [data-lang="ar"] { display: revert; }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <div class="top">
-      <div class="brand">
-        <img src="https://github.com/MohammedHalawani/MindBreak/blob/main/MindBreak.png?raw=true" alt="MindBreak icon" class="logo" />
-        <div>
-          <h1>MindBreak</h1>
-          <div class="small muted">Support • Privacy • Licenses</div>
-        </div>
+
+    <div class="lang-bar">
+      <div class="lang-switch">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">English</button>
+        <button class="lang-btn" id="btn-ar" onclick="setLang('ar')">العربية</button>
       </div>
-      <div class="pill">Built for mindful breaks</div>
     </div>
 
-    <section class="hero" aria-label="MindBreak overview">
-      <div class="hero-inner">
-        <h2>Pause the scroll. Reset your mind.</h2>
-        <p>
-          MindBreak helps you become more mindful of your screen time using gentle nudges and
-          short brain teasers when you hit your limits — designed to break autopilot scrolling,
-          not punish you for it.
-        </p>
+    <div class="top">
+      <div class="brand">
+        <div class="logo">
+          <img src="https://github.com/MohammedHalawani/MindBreak/blob/main/MindBreak.png?raw=true" alt="MindBreak icon" />
+        </div>
+        <div>
+          <h1>MindBreak</h1>
+          <div class="sub">
+            <span data-lang="en">Support · Privacy · Licenses</span>
+            <span data-lang="ar">الدعم · الخصوصية · التراخيص</span>
+          </div>
+        </div>
+      </div>
+      <div class="pill">
+        <span data-lang="en">Built for mindful breaks</span>
+        <span data-lang="ar">صُمِّم لاستراحات واعية</span>
+      </div>
+    </div>
 
+    <section class="hero">
+      <div class="hero-inner">
+        <h2>
+          <span data-lang="en">Pause the scroll. Reset your mind.</span>
+          <span data-lang="ar">توقف عن التمرير. أعِد ضبط ذهنك.</span>
+        </h2>
+        <p>
+          <span data-lang="en">MindBreak helps you become more mindful of your screen time using gentle nudges and short brain teasers when you hit your limits — designed to break autopilot scrolling, not punish you for it.</span>
+          <span data-lang="ar">يساعدك MindBreak على أن تكون أكثر وعياً بوقت شاشتك من خلال تنبيهات لطيفة وألغاز ذهنية قصيرة عند بلوغك حدودك — مصمم لكسر التمرير التلقائي، لا لمعاقبتك عليه.</span>
+        </p>
         <div class="actions">
           <a class="btn primary" href="mailto:xmb.bmx30@gmail.com?subject=MindBreak%20Support">
-            Contact Support
+            <span data-lang="en">Contact Support</span>
+            <span data-lang="ar">تواصل مع الدعم</span>
           </a>
-          <a class="btn" href="#privacy">Privacy</a>
+          <a class="btn" href="#privacy">
+            <span data-lang="en">Privacy</span>
+            <span data-lang="ar">الخصوصية</span>
+          </a>
           <a class="btn" href="#faq">FAQ</a>
-          <a class="btn" href="#licenses">Licenses</a>
+          <a class="btn" href="#licenses">
+            <span data-lang="en">Licenses</span>
+            <span data-lang="ar">التراخيص</span>
+          </a>
         </div>
       </div>
     </section>
 
     <div class="grid">
-      <section class="card" id="privacy">
-        <div class="hd"><h3>Privacy</h3></div>
-        <div class="bd">
-          <p style="margin-top:0">
-            MindBreak does <strong>not</strong> collect, store, or share personal data.
-            All processing happens <strong>locally on your device</strong>.
-          </p>
 
+      <section class="card" id="privacy">
+        <div class="hd">
+          <h3>
+            <span data-lang="en">Privacy</span>
+            <span data-lang="ar">الخصوصية</span>
+          </h3>
+        </div>
+        <div class="bd">
+          <p class="card-intro">
+            <span data-lang="en">MindBreak does <strong>not</strong> collect, store, or share personal data. All processing happens <strong>locally on your device</strong>.</span>
+            <span data-lang="ar">لا يقوم MindBreak بجمع أو تخزين أو مشاركة أي بيانات شخصية. تتم جميع العمليات <strong>محلياً على جهازك</strong>.</span>
+          </p>
           <ul class="list">
-            <li class="li"><div class="badge">🔒</div><div><strong>No data collection</strong><div class="small">No analytics, identifiers, or tracking.</div></div></li>
-            <li class="li"><div class="badge">📱</div><div><strong>On-device only</strong><div class="small">Your limits and sessions stay on your phone.</div></div></li>
-            <li class="li"><div class="badge">🤝</div><div><strong>No sharing</strong><div class="small">No selling or sharing with third parties.</div></div></li>
+            <li class="li">
+              <div class="badge">🔒</div>
+              <div>
+                <strong><span data-lang="en">No data collection</span><span data-lang="ar">لا جمع للبيانات</span></strong>
+                <div class="small"><span data-lang="en">No analytics, identifiers, or tracking.</span><span data-lang="ar">لا تحليلات، ولا معرّفات، ولا تتبع.</span></div>
+              </div>
+            </li>
+            <li class="li">
+              <div class="badge">📱</div>
+              <div>
+                <strong><span data-lang="en">On-device only</span><span data-lang="ar">على الجهاز فقط</span></strong>
+                <div class="small"><span data-lang="en">Your limits and sessions stay on your phone.</span><span data-lang="ar">تبقى حدودك وجلساتك على هاتفك.</span></div>
+              </div>
+            </li>
+            <li class="li">
+              <div class="badge">🤝</div>
+              <div>
+                <strong><span data-lang="en">No sharing</span><span data-lang="ar">لا مشاركة</span></strong>
+                <div class="small"><span data-lang="en">No selling or sharing with third parties.</span><span data-lang="ar">لا بيع أو مشاركة مع أطراف خارجية.</span></div>
+              </div>
+            </li>
           </ul>
         </div>
       </section>
 
       <section class="card" id="faq">
-        <div class="hd"><h3>FAQ</h3></div>
+        <div class="hd">
+          <h3>FAQ</h3>
+        </div>
         <div class="bd">
           <ul class="list">
-            <li class="li"><div class="badge">⏱️</div><div><strong>How does it work?</strong><div class="small">Set limits. When you hit them, MindBreak shows a short brain teaser.</div></div></li>
-            <li class="li"><div class="badge">🧠</div><div><strong>Why brain teasers?</strong><div class="small">They help interrupt mindless scrolling and reset your focus.</div></div></li>
-            <li class="li"><div class="badge">🔔</div><div><strong>Do I need notifications?</strong><div class="small">Recommended, so you can get nudges even when the app is closed.</div></div></li>
+            <li class="li">
+              <div class="badge">⏱️</div>
+              <div>
+                <strong><span data-lang="en">How does it work?</span><span data-lang="ar">كيف يعمل؟</span></strong>
+                <div class="small"><span data-lang="en">Set limits. When you hit them, MindBreak shows a short brain teaser.</span><span data-lang="ar">حدد الحدود. عند بلوغها، يعرض MindBreak لغزاً ذهنياً قصيراً.</span></div>
+              </div>
+            </li>
+            <li class="li">
+              <div class="badge">🧠</div>
+              <div>
+                <strong><span data-lang="en">Why brain teasers?</span><span data-lang="ar">لماذا الألغاز الذهنية؟</span></strong>
+                <div class="small"><span data-lang="en">They interrupt mindless scrolling and reset your focus.</span><span data-lang="ar">تساعد على مقاطعة التمرير اللاواعي وإعادة تركيزك.</span></div>
+              </div>
+            </li>
+            <li class="li">
+              <div class="badge">🔔</div>
+              <div>
+                <strong><span data-lang="en">Do I need notifications?</span><span data-lang="ar">هل أحتاج الإشعارات؟</span></strong>
+                <div class="small"><span data-lang="en">Recommended, so you get nudges even when the app is closed.</span><span data-lang="ar">يُنصح بها لتصلك التنبيهات حتى عند إغلاق التطبيق.</span></div>
+              </div>
+            </li>
           </ul>
         </div>
       </section>
+
     </div>
 
-    <section class="card" id="licenses" style="margin-top:16px;">
-      <div class="hd"><h3>Licenses</h3></div>
+    <section class="card" id="licenses" style="margin-top:14px;">
+      <div class="hd">
+        <h3>
+          <span data-lang="en">Licenses</span>
+          <span data-lang="ar">التراخيص</span>
+        </h3>
+      </div>
       <div class="bd">
-        <p style="margin-top:0">
-          MindBreak uses trivia content from the <strong>OpenTriviaQA</strong> dataset.
+        <p class="card-intro">
+          <span data-lang="en">MindBreak uses trivia content from the <strong>OpenTriviaQA</strong> dataset.</span>
+          <span data-lang="ar">يستخدم MindBreak محتوى الأسئلة الثقافية من مجموعة بيانات <strong>OpenTriviaQA</strong>.</span>
         </p>
-        <p class="small">
-          <strong>Questions & answers by uberspot</strong> — licensed under
-          <strong>CC BY-SA 4.0</strong>
+        <p style="font-size:12.5px; margin: 8px 0 4px;">
+          <span data-lang="en"><strong>Questions & answers by uberspot</strong> — licensed under <strong>CC BY-SA 4.0</strong></span>
+          <span data-lang="ar"><strong>الأسئلة والأجوبة بواسطة uberspot</strong> — مرخصة بموجب <strong>CC BY-SA 4.0</strong></span>
         </p>
         <ul class="list">
           <li class="li">
@@ -327,7 +434,8 @@
             <div>
               <strong>OpenTriviaQA</strong>
               <div class="small">
-                Source: <a href="https://github.com/uberspot/OpenTriviaQA" target="_blank" rel="noopener noreferrer">github.com/uberspot/OpenTriviaQA</a>
+                <span data-lang="en">Source: </span><span data-lang="ar">المصدر: </span>
+                <a href="https://github.com/uberspot/OpenTriviaQA" target="_blank" rel="noopener noreferrer">github.com/uberspot/OpenTriviaQA</a>
               </div>
             </div>
           </li>
@@ -336,25 +444,47 @@
             <div>
               <strong>Creative Commons BY-SA 4.0</strong>
               <div class="small">
-                License: <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">creativecommons.org/licenses/by-sa/4.0</a>
+                <span data-lang="en">License: </span><span data-lang="ar">الترخيص: </span>
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">creativecommons.org/licenses/by-sa/4.0</a>
               </div>
             </div>
           </li>
         </ul>
-        <p class="small" style="margin-bottom:0">
-          Any adapted content is shared under the same license, in accordance with CC BY-SA 4.0.
+        <p style="font-size:12.5px; margin-top:12px; margin-bottom:0;">
+          <span data-lang="en">Any adapted content is shared under the same license, in accordance with CC BY-SA 4.0.</span>
+          <span data-lang="ar">أي محتوى معدّل يُشارك بموجب نفس الترخيص وفقاً لـ CC BY-SA 4.0.</span>
         </p>
       </div>
     </section>
 
     <div class="footer">
       <div>© <span id="year"></span> MindBreak</div>
-      <div class="small">Support: <span class="kbd">xmb.bmx30@gmail.com</span></div>
+      <div>
+        <span data-lang="en">Support: </span>
+        <span data-lang="ar">الدعم: </span>
+        <span class="kbd">xmb.bmx30@gmail.com</span>
+      </div>
     </div>
+
   </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    function setLang(lang) {
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      document.body.classList.toggle('ar', lang === 'ar');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+      localStorage.setItem('mb-lang', lang);
+    }
+
+    const saved = localStorage.getItem('mb-lang');
+    const browserAr = navigator.language?.startsWith('ar');
+    if (saved) setLang(saved);
+    else if (browserAr) setLang('ar');
+    else setLang('en');
   </script>
 </body>
 </html>
